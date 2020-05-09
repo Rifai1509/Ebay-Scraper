@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block body %}
+{% for p in semua:%}
+{{p.find('div', 's-item__image')|safe}}
+Name = <a href="{{p.find('a')['href']|safe}}">{{p.find('a').find('img')['alt']|safe}}</a> <br/>
+Price = {{p.find('span', 's-item__price')|safe}}
+{% endfor %}
+{% endblock %}
